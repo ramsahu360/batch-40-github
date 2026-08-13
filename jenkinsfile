@@ -1,0 +1,27 @@
+pipeline {
+    agent {label 'node-01'} 
+    stages {
+        stage('Git-Pull') { 
+            steps {
+              git branch: 'main', url: 'https://github.com/ramsahu360/EasyCRUD-DC.git'
+            }
+        }
+        stage('Build') { 
+            steps {
+             echo 'Build Success'
+            }
+        }
+        stage('Test') { 
+            steps {
+               echo 'Build Test'
+            }
+        }
+        stage('Deploy') { 
+            steps {
+                echo 'Build Deploy'
+            }
+        }
+    }
+}
+
+            
